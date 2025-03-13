@@ -13,6 +13,8 @@ import {
 } from 'firebase/auth';
 import { auth } from '@/lib/firebase/config';
 import { checkUserRole, UserRole } from "@/lib/firebase/admin";
+import { doc, setDoc, collection, getDocs } from 'firebase/firestore';
+import { db } from '@/lib/firebase/config';
 
 interface AuthContextType {
   user: User | null;
@@ -97,9 +99,40 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     try {
       setError(null);
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      // New users are not admins by default
-      setUserRole({ isAdmin: false, role: 'user', createdAt: new Date(), updatedAt: new Date() });
-      setIsAdmin(false);
+      
+      // Store user data in Firestore
+      const userRef = doc(db, "users", userCredential.user.uid);
+      await setDoc(userRef, {
+        email: userCredential.user.email,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      });
+
+      // Check if this is the first user
+      const usersCollection = collection(db, "users");
+      const usersSnapshot = await getDocs(usersCollection);
+      
+      if (usersSnapshot.size <= 1) { // If this is the first user
+        // Make them an admin
+        await setUserAsAdmin(userCredential.user.uid);
+        setUserRole({ 
+          isAdmin: true, 
+          role: 'admin', 
+          createdAt: new Date(), 
+          updatedAt: new Date() 
+        });
+        setIsAdmin(true);
+      } else {
+        // Regular user setup
+        setUserRole({ 
+          isAdmin: false, 
+          role: 'user', 
+          createdAt: new Date(), 
+          updatedAt: new Date() 
+        });
+        setIsAdmin(false);
+      }
+      
       return userCredential;
     } catch (err: any) {
       setError(err.message);

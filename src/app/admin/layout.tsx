@@ -10,7 +10,8 @@ import {
   ShoppingCart, 
   Users, 
   Settings,
-  LogOut
+  LogOut,
+  UserCog
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -83,6 +84,13 @@ export default function AdminLayout({
             >
               <ShoppingCart className="w-5 h-5" />
               <span>Orders</span>
+            </Link>
+            <Link 
+              href="/admin/users"
+              className="flex items-center space-x-3 px-4 py-3 text-gray-700 hover:bg-purple-50 rounded-lg transition-colors"
+            >
+              <UserCog className="w-5 h-5" />
+              <span>Users</span>
             </Link>
             <Link 
               href="/admin/customers"

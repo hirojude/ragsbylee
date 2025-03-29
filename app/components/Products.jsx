@@ -1,8 +1,8 @@
 import Link from "next/link";
 import FavoriteButton from "./FavoriteButton";
-import AuthContextProvider from "@/contexts/AuthContext";
+import AuthContextProvider from "../../contexts/AuthContext";
 import AddToCartButton from "./AddToCartButton";
-import { getProductReviewCounts } from "@/lib/firestore/products/count/read";
+import { getProductReviewCounts } from "../../lib/firestore/products/count/read";
 import { Suspense } from "react";
 import MyRating from "./MyRating";
 import { ProductGridSkeleton } from "./Skeletons";

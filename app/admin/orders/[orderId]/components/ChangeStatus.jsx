@@ -1,6 +1,6 @@
 "use client";
 
-import { updateOrderStatus } from "@/lib/firestore/orders/write";
+import { updateOrderStatus } from "../../../../../lib/firestore/orders/write";
 import toast from "react-hot-toast";
 
 export default function ChangeOrderStatus({ order }) {

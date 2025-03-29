@@ -1,7 +1,7 @@
 "use client";
 
-import { useBrands } from "@/lib/firestore/brands/read";
-import { useCategories } from "@/lib/firestore/categories/read";
+import { useBrands } from "../../../../../lib/firestore/brands/read";
+import { useCategories } from "../../../../../lib/firestore/categories/read";
 
 export default function BasicDetails({ data, handleData }) {
   const { data: brands } = useBrands();

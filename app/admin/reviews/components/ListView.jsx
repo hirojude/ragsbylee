@@ -1,8 +1,8 @@
 "use client";
 
-import { useProduct } from "@/lib/firestore/products/read";
-import { useAllReview } from "@/lib/firestore/reviews/read";
-import { deleteReview } from "@/lib/firestore/reviews/write";
+import { useProduct } from "../../../../lib/firestore/products/read";
+import { useAllReview } from "../../../../lib/firestore/reviews/read";
+import { deleteReview } from "../../../../lib/firestore/reviews/write";
 import { Rating } from "@mui/material";
 import { Avatar, Button, CircularProgress } from "@nextui-org/react";
 import { Trash2 } from "lucide-react";

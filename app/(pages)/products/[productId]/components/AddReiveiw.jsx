@@ -1,7 +1,7 @@
 "use client";
 
-import { useAuth } from "@/contexts/AuthContext";
-import { addReview } from "@/lib/firestore/reviews/write";
+import { useAuth } from "../../../../../contexts/AuthContext";
+import { addReview } from "../../../../../lib/firestore/reviews/write";
 import { useUser } from "../../../../../lib/firestore/user/read";
 import { Rating } from "@mui/material";
 import { Button } from "@nextui-org/react";

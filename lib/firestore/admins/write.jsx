@@ -1,4 +1,4 @@
-import { db } from "@/lib/firebase";
+import { db } from "../../../lib/firebase";
 import {
   collection,
   deleteDoc,
@@ -7,7 +7,7 @@ import {
   Timestamp,
   updateDoc,
 } from "firebase/firestore";
-import { uploadFile } from "@/lib/storage";
+import { uploadFile } from "../../../lib/storage";
 
 export const createNewAdmin = async ({ data, image }) => {
   if (!image) {

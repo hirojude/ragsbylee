@@ -1,7 +1,7 @@
 "use client";
 
-import { useCollections } from "@/lib/firestore/collections/read";
-import { deleteCollection } from "@/lib/firestore/collections/write";
+import { useCollections } from "../../../../lib/firestore/collections/read";
+import { deleteCollection } from "../../../../lib/firestore/collections/write";
 import { Button, CircularProgress } from "@nextui-org/react";
 import { Edit2, Trash2 } from "lucide-react";
 import { useRouter } from "next/navigation";

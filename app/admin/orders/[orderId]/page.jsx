@@ -1,6 +1,6 @@
 "use client";
 
-import { useOrder } from "@/lib/firestore/orders/read";
+import { useOrder } from "../../../../lib/firestore/orders/read";
 import { CircularProgress } from "@nextui-org/react";
 import { useParams } from "next/navigation";
 import ChangeOrderStatus from "./components/ChangeStatus";

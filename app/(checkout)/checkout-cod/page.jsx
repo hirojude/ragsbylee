@@ -1,6 +1,6 @@
-import Footer from "@/app/components/Footer";
-import Header from "@/app/components/Header";
-import { admin, adminDB } from "@/lib/firebase_admin";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
+import { admin, adminDB } from "../../../lib/firebase_admin";
 import Link from "next/link";
 
 const fetchCheckout = async (checkoutId, userId) => {

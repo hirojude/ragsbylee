@@ -1,6 +1,6 @@
 "use client";
 
-import { db } from "@/lib/firebase";
+import { db } from "../../firebase";
 import { collection, onSnapshot } from "firebase/firestore";
 import useSWRSubscription from "swr/subscription";
 

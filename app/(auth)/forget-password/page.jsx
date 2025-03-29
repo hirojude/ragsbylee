@@ -1,8 +1,8 @@
 "use client";
 
-import { useAuth } from "@/contexts/AuthContext";
-import { auth } from "@/lib/firebase";
-import { createUser } from "@/lib/firestore/user/write";
+import { useAuth } from "../../../contexts/AuthContext";
+import { auth } from "../../../lib/firebase";
+// import { createUser } from "/lib/firestore/user/write";
 import { Button } from "@nextui-org/react";
 import {
   createUserWithEmailAndPassword,

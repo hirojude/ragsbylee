@@ -1,4 +1,4 @@
-import { db } from "@/lib/firebase";
+import { db } from "../../firebase";
 import { doc, setDoc, Timestamp } from "firebase/firestore";
 
 export const createUser = async ({ uid, displayName, photoURL }) => {

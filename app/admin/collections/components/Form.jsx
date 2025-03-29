@@ -1,11 +1,11 @@
 "use client";
 
-import { getCollection } from "@/lib/firestore/collections/read_server";
+import { getCollection } from "../../../../lib/firestore/collections/read_server";
 import {
   createNewCollection,
   updateCollection,
-} from "@/lib/firestore/collections/write";
-import { useProduct, useProducts } from "@/lib/firestore/products/read";
+} from "../../../../lib/firestore/collections/write";
+import { useProduct, useProducts } from "../../../../lib/firestore/products/read";
 import { Button } from "@nextui-org/react";
 import { X } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";

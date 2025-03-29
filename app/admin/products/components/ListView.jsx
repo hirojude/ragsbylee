@@ -1,7 +1,7 @@
 "use client";
 
-import { useProducts } from "@/lib/firestore/products/read";
-import { deleteProduct } from "@/lib/firestore/products/write";
+import { useProducts } from "../../../../lib/firestore/products/read";
+import { deleteProduct } from "../../../../lib/firestore/products/write";
 import { Button, CircularProgress } from "@nextui-org/react";
 import { Edit2, Trash2 } from "lucide-react";
 import { useRouter } from "next/navigation";

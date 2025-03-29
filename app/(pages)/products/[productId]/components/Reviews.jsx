@@ -1,8 +1,8 @@
 "use client";
 
-import { useAuth } from "@/contexts/AuthContext";
-import { useReviews } from "@/lib/firestore/reviews/read";
-import { deleteReview } from "@/lib/firestore/reviews/write";
+import { useAuth } from "../../../../../contexts/AuthContext";
+import { useReviews } from "../../../../../lib/firestore/reviews/read";
+import { deleteReview } from "../../../../../lib/firestore/reviews/write";
 import { useUser } from "../../../../../lib/firestore/user/read";
 import { Rating } from "@mui/material";
 import { Avatar, Button } from "@nextui-org/react";

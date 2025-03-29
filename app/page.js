@@ -1,17 +1,17 @@
 import {
   getFeaturedProducts,
   getProducts,
-} from "@/lib/firestore/products/read_server";
+} from "../lib/firestore/products/read_server";
 import Header from "./components/Header";
 import FeaturedProductSlider from "./components/Sliders";
 import Collections from "./components/Collections";
-import { getCollections } from "@/lib/firestore/collections/read_server";
+import { getCollections } from "../lib/firestore/collections/read_server";
 import Categories from "./components/Categories";
-import { getCategories } from "@/lib/firestore/categories/read_server";
+import { getCategories } from "../lib/firestore/categories/read_server";
 import ProductsGridView from "./components/Products";
 import CustomerReviews from "./components/CustomerReviews";
 import Brands from "./components/Brands";
-import { getBrands } from "@/lib/firestore/brands/read_server";
+import { getBrands } from "../lib/firestore/brands/read_server";
 import Footer from "./components/Footer";
 
 export const dynamic = 'force-dynamic'

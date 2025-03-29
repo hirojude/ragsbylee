@@ -1,6 +1,6 @@
 "use client";
 
-import { useOrdersCountsByTotalDays } from "@/lib/firestore/orders/read_count";
+import { useOrdersCountsByTotalDays } from "../../lib/firestore/orders/read_count";
 import CountMeter from "./components/CountMeter";
 import OrdersChart from "./components/OrdersChart";
 import RevenueChart from "./components/RevenueChart";

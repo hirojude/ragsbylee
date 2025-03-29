@@ -1,7 +1,7 @@
 "use client";
 
-import { useCategories } from "@/lib/firestore/categories/read";
-import { deleteCategory } from "@/lib/firestore/categories/write";
+import { useCategories } from "../../../../lib/firestore/categories/read";
+import { deleteCategory } from "../../../../lib/firestore/categories/write";
 import { Button, CircularProgress } from "@nextui-org/react";
 import { Edit2, Trash2 } from "lucide-react";
 import { useRouter } from "next/navigation";

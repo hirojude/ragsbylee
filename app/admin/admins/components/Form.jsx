@@ -1,7 +1,7 @@
 "use client";
 
-import { getAdmin } from "@/lib/firestore/admins/read_server";
-import { createNewAdmin, updateAdmin } from "@/lib/firestore/admins/write";
+import { getAdmin } from "../../../../lib/firestore/admins/read_server";
+import { createNewAdmin, updateAdmin } from "../../../../lib/firestore/admins/write";
 import { Button } from "@nextui-org/react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";

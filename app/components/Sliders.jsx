@@ -5,7 +5,7 @@ import { Heart } from "lucide-react";
 import Link from "next/link";
 import Slider from "react-slick";
 import FavoriteButton from "./FavoriteButton";
-import AuthContextProvider from "@/contexts/AuthContext";
+import AuthContextProvider from "../../contexts/AuthContext";
 import AddToCartButton from "./AddToCartButton";
 
 export default function FeaturedProductSlider({ featuredProducts }) {

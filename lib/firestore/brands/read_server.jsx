@@ -1,4 +1,4 @@
-import { db } from "@/lib/firebase";
+import { db } from "../../firebase";
 import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 
 export const getBrand = async ({ id }) => {

@@ -1,4 +1,4 @@
-import { db } from "@/lib/firebase";
+import { db } from "../../firebase";
 import {
   collection,
   deleteDoc,
@@ -7,7 +7,7 @@ import {
   Timestamp,
   updateDoc,
 } from "firebase/firestore";
-import { uploadFile } from "@/lib/storage";
+import { uploadFile } from "../../storage";
 
 export const createNewCategory = async ({ data, image }) => {
   if (!image) {

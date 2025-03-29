@@ -1,4 +1,4 @@
-import { db } from "@/lib/firebase";
+import { db } from "../../firebase";
 import { collection, doc, getDoc, setDoc, Timestamp } from "firebase/firestore";
 
 export const createCheckoutAndGetURL = async ({ uid, products, address }) => {

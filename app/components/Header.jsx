@@ -1,7 +1,7 @@
 import { Heart, Search, ShoppingCart, UserCircle2 } from "lucide-react";
 import Link from "next/link";
 import LogoutButton from "./LogoutButton";
-import AuthContextProvider from "@/contexts/AuthContext";
+import AuthContextProvider from "../../contexts/AuthContext";
 import HeaderClientButtons from "./HeaderClientButtons";
 import AdminButton from "./AdminButton";
 import logo from "../../public/by lee logo.png";

@@ -1,6 +1,6 @@
 "use client";
 
-import AuthContextProvider, { useAuth } from "@/contexts/AuthContext";
+import AuthContextProvider, { useAuth } from "../../contexts/AuthContext";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { CircularProgress } from "@nextui-org/react";

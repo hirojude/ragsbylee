@@ -1,4 +1,4 @@
-import { db } from "@/lib/firebase";
+import { db } from "../../firebase";
 import {
   collection,
   deleteDoc,
@@ -6,7 +6,7 @@ import {
   setDoc,
   Timestamp,
 } from "firebase/firestore";
-import { uploadFile } from "@/lib/storage";
+import { uploadFile } from "../../storage";
 
 export const createNewProduct = async ({ data, featureImage, imageList }) => {
   if (!data?.title) {

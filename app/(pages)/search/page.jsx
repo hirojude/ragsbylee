@@ -1,4 +1,4 @@
-import { ProductCard } from "@/app/components/Products";
+import { ProductCard } from "../../components/Products";
 import { algoliasearch } from "algoliasearch";
 import SearchBox from "./components/SearchBox";
 

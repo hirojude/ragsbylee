@@ -44,7 +44,7 @@ export default function ListView() {
             return (
               <Row
                 key={item?.id}
-                index={index + lastSnapDocList?.length * pageLimit}
+                index={index}
                 item={item}
               />
             );

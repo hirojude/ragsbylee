@@ -18,7 +18,7 @@ export default function Photos({ imageList }) {
           alt="Selected product image"
         />
       </div>
-      <div className="flex flex-wrap justify-center items-center gap-3">
+      {/* <div className="flex flex-wrap justify-center items-center gap-3">
         {imageList?.map((item, index) => {
           return (
             <div
@@ -36,7 +36,7 @@ export default function Photos({ imageList }) {
             </div>
           );
         })}
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -24,7 +24,7 @@ export default function Footer() {
             </span>
           </Link>
           <p className="mt-4 text-gray-400 leading-relaxed">
-            Premium durags for the modern gentleman. Quality materials, stylish designs, and ultimate comfort.
+          Experience luxury with our premium durags, designed for the modern individual. Crafted from high-quality materials, featuring stylish designs, and built for ultimate comfort, our durags are the perfect blend of fashion and function. Unisex and versatile, they offer a sleek fit for everyone, ensuring you look and feel your best.
           </p>
           <div className="flex space-x-4 mt-6">
             <a href="#" className="text-gray-400 hover:text-white transition-colors">

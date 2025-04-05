@@ -152,10 +152,7 @@ export default function AboutUs() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed text-gray-200"
             >
-              RagsByLee is more than just a fashion brand; it's a lifestyle. We craft
-              high-quality, stylish durags and accessories that elevate your look
-              and confidence. Join us as we redefine fashion with elegance and
-              authenticity.
+              Experience luxury with our premium durags, designed for the modern individual. Crafted from high-quality materials, featuring stylish designs, and built for ultimate comfort, our durags are the perfect blend of fashion and function. Unisex and versatile, they offer a sleek fit for everyone, ensuring you look and feel your best.
             </motion.p>
             
             <motion.div 

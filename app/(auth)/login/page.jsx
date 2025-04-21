@@ -158,6 +158,7 @@ export default function Page() {
 
 function SignInWithGoogleComponent() {
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
   const handleLogin = async () => {
     setIsLoading(true);
     try {
@@ -168,10 +169,26 @@ function SignInWithGoogleComponent() {
         displayName: user?.displayName,
         photoURL: user?.photoURL,
       });
+      toast.success("Logged in successfully with Google");
+      router.push("/account");
     } catch (error) {
-      toast.error(error?.message);
+      console.error("Google sign-in error:", error);
+      let errorMessage = "Failed to sign in with Google";
+      
+      if (error.code === "auth/popup-closed-by-user") {
+        errorMessage = "Sign-in cancelled. Please try again";
+      } else if (error.code === "auth/popup-blocked") {
+        errorMessage = "Pop-up blocked. Please allow pop-ups for this site";
+      } else if (error.code === "auth/account-exists-with-different-credential") {
+        errorMessage = "An account already exists with the same email address but different sign-in credentials";
+      } else if (error.code === "auth/network-request-failed") {
+        errorMessage = "Network error. Please check your connection";
+      }
+      
+      toast.error(errorMessage);
+    } finally {
+      setIsLoading(false);
     }
-    setIsLoading(false);
   };
   return (
     <Button isLoading={isLoading} isDisabled={isLoading} onClick={handleLogin}>

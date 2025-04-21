@@ -28,6 +28,17 @@ export default function Page() {
     });
   };
   const handleSignUp = async () => {
+    // Form validation
+    if (!data?.name || !data?.email || !data?.password) {
+      toast.error("Please fill in all fields");
+      return;
+    }
+
+    if (data?.password.length < 6) {
+      toast.error("Password must be at least 6 characters long");
+      return;
+    }
+
     setIsLoading(true);
     try {
       const credential = await createUserWithEmailAndPassword(
@@ -47,9 +58,25 @@ export default function Page() {
       toast.success("Successfully Sign Up");
       router.push("/account");
     } catch (error) {
-      toast.error(error?.message);
+      console.error("Sign up error:", error);
+      let errorMessage = "Failed to sign up";
+      
+      if (error.code === "auth/email-already-in-use") {
+        errorMessage = "Email is already registered";
+      } else if (error.code === "auth/invalid-email") {
+        errorMessage = "Invalid email address";
+      } else if (error.code === "auth/operation-not-allowed") {
+        errorMessage = "Email/password accounts are not enabled";
+      } else if (error.code === "auth/weak-password") {
+        errorMessage = "Password is too weak";
+      } else if (error.code === "auth/network-request-failed") {
+        errorMessage = "Network error. Please check your connection";
+      }
+      
+      toast.error(errorMessage);
+    } finally {
+      setIsLoading(false);
     }
-    setIsLoading(false);
   };
 
   return (

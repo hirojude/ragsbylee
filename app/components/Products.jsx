@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import FavoriteButton from "./FavoriteButton";
 import AuthContextProvider from "../../contexts/AuthContext";
 import AddToCartButton from "./AddToCartButton";
@@ -32,14 +33,20 @@ export function ProductCard({ product }) {
   return (
     <div className="flex flex-col bg-white shadow-xl rounded-2xl overflow-hidden transition-transform duration-300 hover:scale-105">
       {/* Product Image */}
-      <div className="relative">
-        <img
+      <div className="relative h-56">
+        <Image
           src={product?.featureImageURL}
-          className="w-full h-56 object-cover"
+          className="object-cover"
           alt={product?.title}
+          fill
+          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+          loading="lazy"
+          quality={75}
+          placeholder="blur"
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkMjU1LS0yMi4qLjgyPjA+OjU/RUVHUFBQUFtbW1tbW1tbW1tbW1v/2wBDARUXFyAeIB4gHR4eIiohKjUqKioqNVs1NTU1NTU1W1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1tbW1v/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
         />
         {/* Favorite Button */}
-        <div className="absolute top-3 right-3 bg-white/80 backdrop-blur-md p-0 rounded-full shadow-md">
+        <div className="absolute top-3 right-3 bg-white/80 backdrop-blur-md p-0 rounded-full shadow-md z-10">
           <AuthContextProvider>
             <FavoriteButton productId={product?.id} />
           </AuthContextProvider>

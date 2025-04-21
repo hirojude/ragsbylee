@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Photos({ imageList }) {
   const [selectedImage, setSelectedImage] = useState(imageList?.[0]);
@@ -11,14 +12,17 @@ export default function Photos({ imageList }) {
 
   return (
     <div className="flex flex-col gap-3 w-full">
-      <div className="flex justify-center w-full">
-        <img
-          className="object-cover h-[350px] md:h-[430px]"
+      <div className="flex justify-center w-full relative h-[350px] md:h-[430px]">
+        <Image
+          className="object-cover"
           src={selectedImage}
           alt="Selected product image"
+          fill
+          priority
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
       </div>
-      {/* <div className="flex flex-wrap justify-center items-center gap-3">
+      <div className="flex flex-wrap justify-center items-center gap-3">
         {imageList?.map((item, index) => {
           return (
             <div
@@ -26,17 +30,19 @@ export default function Photos({ imageList }) {
               onClick={() => {
                 setSelectedImage(item);
               }}
-              className="w-[80px] border rounded p-2 cursor-pointer hover:border-blue-500 transition-colors"
+              className="w-[80px] h-[80px] border rounded p-2 cursor-pointer hover:border-blue-500 transition-colors relative"
             >
-              <img 
-                className="object-cover w-full h-full" 
+              <Image 
+                className="object-cover" 
                 src={item} 
                 alt={`Product image ${index + 1}`}
+                fill
+                sizes="80px"
               />
             </div>
           );
         })}
-      </div> */}
+      </div>
     </div>
   );
 }

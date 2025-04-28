@@ -12,17 +12,18 @@ export default function Photos({ imageList }) {
 
   return (
     <div className="flex flex-col gap-3 w-full">
-      <div className="flex justify-center w-full relative h-[350px] md:h-[430px]">
+      <div className="flex justify-center w-full">
         <Image
-          className="object-cover"
+          className="object-contain"
           src={selectedImage}
           alt="Selected product image"
-          fill
-          priority
-          sizes="(max-width: 768px) 100vw, 50vw"
+          width={400}
+          height={600} // or calculate based on 750x1131 aspect ratio
+          priority={false} // or true if you want it to load immediately
+          sizes="(max-width: 768px) 100vw, 400px"
         />
       </div>
-      <div className="flex flex-wrap justify-center items-center gap-3">
+      {/* <div className="flex flex-wrap justify-center items-center gap-3">
         {imageList?.map((item, index) => {
           return (
             <div
@@ -30,19 +31,17 @@ export default function Photos({ imageList }) {
               onClick={() => {
                 setSelectedImage(item);
               }}
-              className="w-[80px] h-[80px] border rounded p-2 cursor-pointer hover:border-blue-500 transition-colors relative"
+              className="w-[80px] border rounded p-2 cursor-pointer hover:border-blue-500 transition-colors"
             >
-              <Image 
-                className="object-cover" 
+              <img 
+                className="object-cover w-full h-full" 
                 src={item} 
                 alt={`Product image ${index + 1}`}
-                fill
-                sizes="80px"
               />
             </div>
           );
         })}
-      </div>
+      </div> */}
     </div>
   );
 }

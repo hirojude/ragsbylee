@@ -71,11 +71,11 @@ export default function Page() {
         errorMessage = "Password is too weak";
       } else if (error.code === "auth/network-request-failed") {
         errorMessage = "Network error. Please check your connection";
-      }
+    }
       
       toast.error(errorMessage);
     } finally {
-      setIsLoading(false);
+    setIsLoading(false);
     }
   };
 

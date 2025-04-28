@@ -114,6 +114,7 @@ export default function Page() {
               onChange={(e) => {
                 handleData("email", e.target.value);
               }}
+              disabled={isLoading}
               className="px-3 py-2 rounded-xl border focus:outline-none w-full"
             />
             <input
@@ -125,6 +126,7 @@ export default function Page() {
               onChange={(e) => {
                 handleData("password", e.target.value);
               }}
+              disabled={isLoading}
               className="px-3 py-2 rounded-xl border focus:outline-none w-full"
             />
             <Button
